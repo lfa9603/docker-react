@@ -1,0 +1,13 @@
+# this is basically a big cmd/bash screen, nothing more
+language: generic 
+sudo: required
+
+
+services:
+  - docker #automatically retrieves a copy of docker to use
+
+before_install:
+  - docker build -t lorenzofasano96/docker-react -f Dockerfile.dev . # how to copy and reuse the id of the build? create tag
+
+  script:
+    - docker run -e CI=true lorenzofasano96/docker-react npm run test -- --coverage # assumes this is either working or not
