@@ -1,4 +1,3 @@
-# this is basically a big cmd/bash screen, nothing more
 language: generic 
 sudo: required
 
